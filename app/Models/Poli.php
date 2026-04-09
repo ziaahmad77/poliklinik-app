@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\User; 
 
 class Poli extends Model
 {
@@ -18,4 +19,3 @@ class Poli extends Model
         return $this->hasMany(User::class, 'id_poli');
     }
 }
-
