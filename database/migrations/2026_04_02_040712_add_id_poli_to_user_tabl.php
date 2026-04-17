@@ -11,8 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('user_tabl', function (Blueprint $table) {
-            //
+        Schema::table('users', function (Blueprint $table) {
+            // jadi ternyata belum ada id_poli nya di table user
+            // kita tambah dahulu
+            $table->string('id_poli')->nullable();
         });
     }
 
@@ -21,7 +23,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('user_tabl', function (Blueprint $table) {
+        Schema::table('users', function (Blueprint $table) {
             $table->dropForeign(['id_poli']);
             $table->dropColumn('id_poli');
         });
