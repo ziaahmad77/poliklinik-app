@@ -14,11 +14,13 @@ return new class extends Migration
         Schema::create('jadwal_periksa', function (Blueprint $table) {
             $table->id();
             $table->foreignId('id_dokter')->constrained('users')->cascadeOnDelete();
-            $table->enum('hari', ['Senin', 'Selasa', 'Rabu' , 'Kamis' , 'Jumat' , 'Sabtu' , 'Minggu']);
+            $table->enum('hari', ['Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu', 'Minggu']);
             $table->time('jam_mulai');
             $table->time('jam selesai');
             $table->timestamps();
         });
+        // biar kita ga perlu fresh database nya, klo di fresh itu ilang semua
+        // kita bikin migrasi baru aja untuk menganti nama field nya jam selesai jadi jam_selesai
     }
 
     /**

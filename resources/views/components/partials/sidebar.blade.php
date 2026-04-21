@@ -69,16 +69,22 @@
             </a>
 
             <a href="{{ route('pasien.index') }}"
-    class="{{ $baseLink }} {{ request()->routeIs('pasien.*') ? $active : $inactive }}">
-    <i class="fas fa-bed-pulse w-4 text-center"></i>
-    Manajemen Pasien
-</a>
+                class="{{ $baseLink }} {{ request()->routeIs('pasien.*') ? $active : $inactive }}">
+                <i class="fas fa-bed-pulse w-4 text-center"></i>
+                Manajemen Pasien
+            </a>
 
-<a href="{{ route('obat.index') }}"
-   class="{{ $baseLink }} {{ request()->routeIs('obat.*') ? $active : $inactive }}">
-    <i class="fas fa-pills w-4 text-center"></i>
-    Manajemen Obat
-</a>
+            <a href="{{ route('obat.index') }}"
+                class="{{ $baseLink }} {{ request()->routeIs('obat.*') ? $active : $inactive }}">
+                <i class="fas fa-pills w-4 text-center"></i>
+                Manajemen Obat
+            </a>
+
+            <a href="{{ route('jadwal-periksa.index') }}"
+                class="{{ $baseLink }} {{ request()->routeIs('jadwal-periksa.*') ? $active : $inactive }}">
+                <i class="fas fa-stethoscope w-4 text-center"></i>
+                Jadwal Periksa
+            </a>
 
         </div>
         @endif
@@ -99,6 +105,12 @@
                 Dashboard Pasien
             </a>
 
+            <a href="{{ route('pasien.daftar') }}"
+   class="{{ $baseLink }} {{ request()->routeIs('pasien.daftar') ? $active : $inactive }}">
+    <i class="fas fa-house-medical w-4 text-center"></i>
+    Pendaftaran Periksa
+</a>
+
 
         </div>
         @endif
@@ -118,7 +130,20 @@
                 <i class="fas fa-stethoscope w-4 text-center"></i>
                 Dashboard Dokter
             </a>
+            <!-- karna disini kita belum menambahkan menu jadwal periksa, jadi harus di tambah dahulu menu nya agar tampilll -->
+            <a href="{{ route('jadwal-periksa.index') }}"
+                class="{{ $baseLink }} {{ request()->routeIs('jadwal-periksa.*') ? $active : $inactive }}">
+                <i class="fas fa-stethoscope w-4 text-center"></i>
+                Jadwal Periksa
+            </a>
 
+            
+            <!-- udah bikin controller  ? route  ? tampilan view ? -->
+            <!-- ini route nya belum sesuai kita sesuaikan cek web.php -->
+            <!-- kita cek route name nya php artisan route:list -->
+             <!-- iconnya di ganti dahulu di sesuaikan dengan modul udah saama wkwk -->
+              <!-- salah nama field nya, harusnya jam_selesai ada unders  tadi disana gaada -->
+               <!-- solusinya update aja migrasinya -->
         </div>
         @endif
 
@@ -136,5 +161,5 @@
             </button>
         </form>
     </div>
-<!-- sama kaya tadiiii -->
+    <!-- sama kaya tadiiii -->
 </aside>
